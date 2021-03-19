@@ -1,0 +1,73 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="userInfo"
+            type="com.nerdygeek.mvvm.ui.registration.types.TypeFragmentViewModel" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <EditText
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={userInfo.landlordEmail}"
+                android:hint="enter your landlord email"
+                android:id="@+id/input_landlord_email" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={userInfo.name}"
+                android:hint="enter your name"
+                android:id="@+id/input_name" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={userInfo.email}"
+                android:hint="enter your email"
+                android:id="@+id/input_email" />
+
+            <EditText
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={userInfo.password}"
+                android:hint="enter your password"
+                android:id="@+id/input_password" />
+
+            <EditText
+
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={userInfo.password}"
+                android:hint="confirm your password"
+                android:id="@+id/input_confirmed_password" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="@{userInfo::onRegisterButtonClick}"
+                android:id="@+id/btn_register"
+                android:text="submit" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
